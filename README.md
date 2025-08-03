@@ -46,12 +46,12 @@ gcc movie_ticket_booking.c -o booking -lpthread
 ./booking
 ```
 ## 🚨 Notes
-pthread_join() is called inside the loop, meaning threads run sequentially, not in parallel. For true concurrency, move pthread_join() outside the loop.
-fflush(stdin) is undefined behavior in some compilers. You may consider using getchar() to clear the buffer in a portable way.
-Input validation is minimal — production systems should include more robust error handling.
+- pthread_join() is called inside the loop, meaning threads run sequentially, not in parallel. For true concurrency, move pthread_join() outside the loop.
+- fflush(stdin) is undefined behavior in some compilers. You may consider using getchar() to clear the buffer in a portable way.
+- Input validation is minimal — production systems should include more robust error handling.
 
 ## 🧾 Structure
 
-Invoice struct — Stores customer ID, movie choice, and number of tickets purchased
-tickets_available[5] — Shared array for remaining tickets per movie
-ticket_mutex — Ensures atomic access to ticket data
+- Invoice struct — Stores customer ID, movie choice, and number of tickets purchased
+- tickets_available[5] — Shared array for remaining tickets per movie
+- ticket_mutex — Ensures atomic access to ticket data
